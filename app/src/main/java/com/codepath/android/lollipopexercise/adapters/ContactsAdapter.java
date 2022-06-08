@@ -1,13 +1,15 @@
 package com.codepath.android.lollipopexercise.adapters;
 
+import android.animation.Animator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.util.Pair;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,6 +27,7 @@ import com.bumptech.glide.request.transition.Transition;
 import com.codepath.android.lollipopexercise.R;
 import com.codepath.android.lollipopexercise.activities.DetailsActivity;
 import com.codepath.android.lollipopexercise.models.Contact;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -104,8 +108,8 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.VH> {
                         Pair<View, String> p1 = Pair.create((View)ivProfile, "profile");
                         Pair<View, String> p2 = Pair.create(vPalette, "palette");
                         Pair<View, String> p3 = Pair.create((View)tvName, "text");
-                        //ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(mContext, p1, p2, p3);
-                        //mContext.startActivity(intent, options.toBundle());
+                        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(mContext, p1, p2, p3);
+                        mContext.startActivity(intent, options.toBundle());
                     }
                 }
             });
