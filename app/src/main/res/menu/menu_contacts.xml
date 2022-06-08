@@ -6,6 +6,7 @@
     <item
         android:id="@+id/miAdd"
         android:icon="@android:drawable/ic_input_add"
+        android:onClick="onComposeAction"
         app:showAsAction="always"
         android:title="@string/add" />
 </menu>
